@@ -1,0 +1,13 @@
+[Unit]
+Description=ip-parrot
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/ip-parrot.py
+WorkingDirectory=/home/pi/
+User=pi
+SyslogIdentifier=ip-parrot
+
+[Install]
+WantedBy=multi-user.target
